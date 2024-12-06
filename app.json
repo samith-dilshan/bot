@@ -4,22 +4,22 @@
   "logo": "https://telegra.ph/file/ad25b2227fa2a1a01b707.jpg",
   "keywords": ["bot"],
   "success_url": "/",
-
+  "env": {
     "ALIVE_IMG": {
-      "description": "https://telegra.ph/file/ad25b2227fa2a1a01b707.jpg",
+      "description": "URL of the alive image.",
+      "value": "https://i.ibb.co/BywLs0t/Any-Conv-com-15b52-1qaglhqizubs8tnecxh8ixg.png",
       "required": true
     },
-    
     "ALIVE_MSG": {
-      "description": "Put your alive msg here.",
+      "description": "Put your alive message here.",
+      "value": "I'm alive!",
       "required": true
-    }   
-},
-
-     "buildpacks": [
-        {
-            "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
-        }
-     ],
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+    }
+  ],
   "stack": "heroku-24"
 }
