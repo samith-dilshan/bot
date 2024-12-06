@@ -16,21 +16,12 @@ const qrcode = require('qrcode-terminal')
 const util = require('util')
 const { sms,downloadMediaMessage } = require('./lib/msg')
 const axios = require('axios')
-const { File } = require('megajs')
 const prefix = '.'
 
 const ownerNumber = ['94768480793']
 
 //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID
-const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-filer.download((err, data) => {
-if(err) throw err
-fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
-console.log("Session downloaded ✅")
-})})}
+// Removed session download logic, will use "session_file_here" directly
 
 const express = require("express");
 const app = express();
@@ -40,7 +31,7 @@ const port = process.env.PORT || 8000;
 
 async function connectToWA() {
 console.log("Connecting wa bot 🧬...");
-const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
+const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/session_file_here/')
 var { version } = await fetchLatestBaileysVersion()
 
 const conn = makeWASocket({
@@ -173,4 +164,4 @@ res.send("hey, bot started✅");
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
 connectToWA()
-}, 4000);  
+}, 4000);
