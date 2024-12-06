@@ -5,12 +5,6 @@
   "keywords": ["bot"],
   "success_url": "/",
 
-  "env": {
-    "SESSION_ID": {
-      "description": "CFdxhQAL#ZACtToSBsiolm9x4yK8j2xqDx6Od1StgCfzgHLqtC1A",
-      "required": true
-    },  
-
     "ALIVE_IMG": {
       "description": "https://telegra.ph/file/ad25b2227fa2a1a01b707.jpg",
       "required": true
